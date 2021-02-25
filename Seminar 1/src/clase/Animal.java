@@ -1,0 +1,20 @@
+package clase;
+
+//poate sa moseneasca sau sa fie mostenita
+//nu poate fi instantaia
+public abstract class Animal {
+	private String nume;
+
+	public Animal(String nume) {
+		super();
+		this.nume = nume;
+	}
+
+	public String getNume() {
+		return nume;
+	}
+
+	public void setNume(String nume) {
+		this.nume = nume;
+	}
+}
