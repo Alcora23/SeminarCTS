@@ -11,8 +11,8 @@ public class Elev extends Aplicant {
 		return clasa;
 	}
 
-	public void setClasa(int i) {
-		this.clasa = i;
+	public void setClasa(int clasa) {
+		this.clasa = clasa;
 	}
 
 	public String getTutore() {

@@ -17,20 +17,20 @@ public class AngajatiReader extends IReader {
 	}
 
 	public List<Aplicant> readAplicants() throws FileNotFoundException {
-		Scanner input2 = new Scanner(new File(super.fisier));
-		input2.useDelimiter(",");
+		Scanner scanner = new Scanner(new File(super.fisier));
+		scanner.useDelimiter(",");
 		List<Aplicant> angajati = new ArrayList<Aplicant>();
 
-		while (input2.hasNext()) {
+		while (scanner.hasNext()) {
 			Angajat angajat = new Angajat();
-			super.citireAplicant(input2, angajat);
-			int salariu = input2.nextInt();
-			String ocupatie = input2.next();
+			super.citireAplicant(scanner, angajat);
+			int salariu = scanner.nextInt();
+			String ocupatie = scanner.next();
 			angajat.setSalariu(salariu);
 			angajat.setOcupatie(ocupatie);
 			angajati.add(angajat);
 		}
-		input2.close();
+		scanner.close();
 		return angajati;
 	}
 }

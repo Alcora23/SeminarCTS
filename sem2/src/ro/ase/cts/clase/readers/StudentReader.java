@@ -17,20 +17,20 @@ public class StudentReader extends IReader {
 	}
 
 	public List<Aplicant> readAplicants() throws FileNotFoundException {
-		Scanner input = new Scanner(new File(super.fisier));
-		input.useDelimiter(",|\n");
+		Scanner scanner = new Scanner(new File(super.fisier));
+		scanner.useDelimiter(",|\n");
 		List<Aplicant> studenti = new ArrayList<Aplicant>();
 
-		while (input.hasNext()) {
+		while (scanner.hasNext()) {
 			Student student = new Student();
-			super.citireAplicant(input, student);
-			int an_studii = input.nextInt();
-			String facultate = (input.next()).toString();
+			super.citireAplicant(scanner, student);
+			int an_studii = scanner.nextInt();
+			String facultate = (scanner.next()).toString();
 			student.setAn_studii(an_studii);
 			student.setFacultate(facultate);
 			studenti.add(student);
 		}
-		input.close();
+		scanner.close();
 		return studenti;
 	}
 }

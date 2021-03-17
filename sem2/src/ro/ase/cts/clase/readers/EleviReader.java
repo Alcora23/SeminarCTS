@@ -17,21 +17,21 @@ public class EleviReader extends IReader {
 	}
 
 	public List<Aplicant> readAplicants() throws FileNotFoundException {
-		Scanner input2 = new Scanner(new File(super.fisier));
-		input2.useDelimiter(",|\n");
+		Scanner scanner = new Scanner(new File(super.fisier));
+		scanner.useDelimiter(",|\n");
 		List<Aplicant> elevi = new ArrayList<Aplicant>();
 
-		while (input2.hasNext()) {
+		while (scanner.hasNext()) {
 			Elev elev = new Elev();
-			super.citireAplicant(input2, elev);
-			int clasa = input2.nextInt();
-			String tutore = input2.next();
+			super.citireAplicant(scanner, elev);
+			int clasa = scanner.nextInt();
+			String tutore = scanner.next();
 			elev.setClasa(clasa);
 			elev.setTutore(tutore);
 			elevi.add(elev);
 		}
 
-		input2.close();
+		scanner.close();
 		return elevi;
 	}
 }

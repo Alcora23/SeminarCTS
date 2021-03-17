@@ -16,21 +16,21 @@ public abstract class IReader {
 
 	public abstract List<Aplicant> readAplicants() throws FileNotFoundException, NumberFormatException;
 
-	public void citireAplicant(Scanner input, Aplicant aplicant) {
-		String nume = input.next();
-		String prenume = input.next();
-		int varsta = input.nextInt();
-		int punctaj = input.nextInt();
-		int nr = input.nextInt();
-		String[] vect = new String[nr];
-		for (int i = 0; i < nr; i++)
-			vect[i] = input.next();
+	public void citireAplicant(Scanner scanner, Aplicant aplicant) {
+		String nume = scanner.next();
+		String prenume = scanner.next();
+		int varsta = scanner.nextInt();
+		int punctaj = scanner.nextInt();
+		int nr_proiecte = scanner.nextInt();
+		String[] vectorDenumiri = new String[nr_proiecte];
+		for (int proiect = 0; proiect < nr_proiecte; proiect++)
+			vectorDenumiri[proiect] = scanner.next();
 
 		aplicant.setNume(nume);
 		aplicant.setPrenume(prenume);
 		aplicant.setVarsta(varsta);
 		aplicant.setPunctaj(punctaj);
-		aplicant.setVectorDenumiri(vect, nr);
+		aplicant.setVectorDenumiri(vectorDenumiri, nr_proiecte);
 		
 	}
 }
